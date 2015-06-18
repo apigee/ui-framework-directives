@@ -1,0 +1,8 @@
+<div class="aui-spinner-overlay__container {{::(spinnerSize ? 'aui-spinner-overlay__container--active--' + spinnerSize : '')}}"
+    ng-class="{'aui-spinner-overlay__container--active': active}">
+
+    <div class="aui-spinner-overlay__overlay">
+        <aui-spinner size="{{::spinnerSize}}"></aui-spinner>
+    </div>
+    <div class="aui-spinner-overlay__content" ng-transclude></div>
+</div>

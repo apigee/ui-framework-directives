@@ -1,0 +1,43 @@
+@aui-spinner-size: @line-height-computed;
+@aui-spinner-size-small: floor(@line-height-computed * 0.8);
+@aui-spinner-size-medium: floor(@line-height-computed * 1.5);
+@aui-spinner-size-large: floor(@line-height-computed * 2);
+
+aui-spinner {
+  display: inline-block;
+  line-height: 1;
+}
+
+.aui-spinner__spinner {
+  @segment-color: @brand-primary;
+  @segment-background: fadeout(@segment-color, 70%);
+
+  .aui-spinner-variant(@aui-spinner-size);
+
+  animation: aui-spinner 0.6s linear infinite;
+
+  border-style: solid;
+  border-color: @segment-background;
+  border-top-color: @segment-color;
+
+  border-radius: 100%;
+
+  &--small { .aui-spinner-variant(@aui-spinner-size-small); }
+  &--medium { .aui-spinner-variant(@aui-spinner-size-medium); }
+  &--large { .aui-spinner-variant(@aui-spinner-size-large); }
+}
+
+// Size variations
+.aui-spinner-variant(@size) {
+  & {
+    height: @size;
+    width: @size;
+    border-width: max(1px, floor(@size / 20));
+  }
+}
+
+// Animation
+@keyframes aui-spinner {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(359deg); }
+}

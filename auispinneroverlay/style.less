@@ -1,0 +1,48 @@
+aui-spinner-overlay {
+  display: block;
+  position: relative;
+}
+
+.aui-spinner-overlay {
+  &__container {
+    &--active {
+      .aui-spinner-overlay-variant(@aui-spinner-size);
+
+      &&--small { .aui-spinner-overlay-variant(@aui-spinner-size-small); }
+      &&--medium { .aui-spinner-overlay-variant(@aui-spinner-size-medium); }
+      &&--large { .aui-spinner-overlay-variant(@aui-spinner-size-large); }
+
+      .aui-spinner-overlay {
+        &__overlay {
+          display: flex;
+        }
+        &__content {
+          opacity: 0.2;
+        }
+      }
+    }
+  }
+
+  &__overlay {
+    display: none;
+    z-index: 1000;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__content {
+    transition: opacity .15s linear;
+  }
+}
+
+// Spinner size variations
+.aui-spinner-overlay-variant(@size) {
+  min-height: @size;
+}

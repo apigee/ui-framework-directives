@@ -1,0 +1,1 @@
+<alert ng-repeat="alert in vm.auiAlerts.alerts" type="{{ alert.type }}" close="alert.close()">{{ alert.msg }} <span class="badge" ng-if="alert.count > 1">{{alert.count}}</span></alert>

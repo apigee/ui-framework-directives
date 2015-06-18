@@ -1,0 +1,24 @@
+{
+  "name": "ui-framework-directives",
+  "version": "0.1.0",
+  "authors": [
+    "Yegor Pomortsev <yegor@apigee.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "angular": "^1.4",
+    "angular-bootstrap": "~0.13.0",
+    "lodash": "~3.9.3",
+    "ui-framework": "~0"
+  }
+}

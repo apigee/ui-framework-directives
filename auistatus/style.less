@@ -1,0 +1,77 @@
+aui-status {
+  display: inline-block;
+
+  > div {
+    @size: unit(@line-height-base, em);
+
+    position: relative;
+
+    .square(@size);
+    border: solid 2px;
+    border-radius: (@size / 2);
+    line-height: 1;
+
+    // hide inner status text
+    span {
+      display: none;
+    }
+
+    &:before {
+      .absolute-center;
+
+      height: 1em;
+      text-align: center;
+
+      display: inline-block;
+      font-family: 'Glyphicons Halflings';
+      font-style: normal;
+      font-weight: normal;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      font-size: floor((@font-size-base * 0.8)); // 11px
+    }
+
+    // default
+    color: @gray-lighter;
+    border-color: @gray-lighter;
+
+    transition: color 0.15s linear, border-color 0.15s linear;
+  }
+}
+
+.aui-status {
+  &--success {
+    // glyphicon-ok
+    .aui-status-variant(@brand-success, "\e013");
+    &:before {
+      top: 0.5px;
+      left: -1px;
+    }
+  }
+
+  &--warning {
+    // glyphicon-warning-sign
+    .aui-status-variant(@brand-warning, "\e107");
+    &:before {
+      left: -0.25px;
+    }
+  }
+
+  &--danger {
+    // glyphicon-remove
+    .aui-status-variant(@brand-danger, "\e014");
+    &:before {
+      top: 0.4px;
+      left: 0.1px;
+    }
+  }
+}
+
+.aui-status-variant(@color; @content) {
+  color: @color;
+  border-color: @color;
+
+  &:before { content: "@{content}"; }
+}
