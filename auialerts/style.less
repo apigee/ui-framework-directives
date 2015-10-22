@@ -1,5 +1,72 @@
 aui-alerts {
-  .alert {
-    margin-bottom: 0;
-  }
+    position: fixed;
+    z-index: @zindex-popover;
+    top: @navbar-height + 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 30vw;
+    max-width: 50vw;
+    .alert {
+        margin-bottom: 0;
+    }
+    .error-summary {
+        display: table-cell;
+        vertical-align: middle;
+        .errorCount {
+            font-size: @font-size-base + 3px;
+        }
+        margin-right: 5px;
+    }
+    .error-summary-detail {
+        padding-left: 10px;
+        display: table-cell;
+        > div {
+            display: table-cell;
+            div {
+                display: block;
+                &.summaries {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    width: 20vw;
+                    padding-right: 10px;
+                }
+                &.instructions {
+                    font-weight: 300;
+                }
+            }
+        }
+        a {
+            text-decoration: underline;
+            color: white;
+        }
+    }
+    span.errorCount {
+        display: inline-block;
+    }
+    .caret {
+        display: inline-block;
+        height: 0;
+        opacity: 1;
+        width: 0;
+        vertical-align: middle;
+        margin-left: 5px;
+        &.right {
+            border-left: 5px solid white;
+            border-bottom: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid transparent;
+            margin-right: 1px;
+            margin-top: 4px;
+            margin-bottom: 6px;
+        }
+        &.down {
+            border-left: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid white;
+            margin-right: 3px;
+            margin-top: 2px;
+        }
+    }
 }
