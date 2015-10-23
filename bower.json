@@ -17,8 +17,8 @@
   "license": "Apache-2.0",
   "dependencies": {
     "angular": "^1.4",
-    "angular-bootstrap": "~0.13.0",
-    "lodash": "~3.9.3",
-    "ui-framework": "~0"
+    "angular-bootstrap": "^0.14.2",
+    "lodash": "^3.10.1",
+    "ui-framework": "^0"
   }
 }
