@@ -1,1 +1,19 @@
-<alert ng-repeat="alert in vm.auiAlerts.alerts" type="{{ alert.type }}" close="alert.close()">{{ alert.msg }} <span class="badge" ng-if="alert.count > 1">{{alert.count}}</span></alert>
+<div ng-show="vm.auiAlerts.alerts.length > 1">
+    <div class="alert" ng-class="vm.severestAlertType()">
+        <div class="error-summary" ng-click="vm.viewAllErrors = !vm.viewAllErrors">
+            <span class="errorCount">{{vm.auiAlerts.alerts.length}}<span class="caret" ng-class="{down: vm.viewAllErrors, right: !vm.viewAllErrors}"></span></span>
+        </div>
+        <div class="error-summary-detail">
+            <div>
+                <div class="summaries">{{vm.messages().join(', ')}}</div>
+                <div class="instructions">Open to view all {{vm.auiAlerts.alerts.length}} messages</div>
+            </div>
+            <div>
+                <a href="" ng-click="vm.auiAlerts.alerts = []">Dismiss All</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-show="vm.viewAllErrors || vm.auiAlerts.alerts.length === 1">
+    <alert ng-repeat="alert in vm.auiAlerts.alerts" type="{{ alert.type }}" close="alert.close()">{{ alert.msg }} <span class="badge" ng-if="alert.count > 1">{{alert.count}}</span></alert>
+</div>
