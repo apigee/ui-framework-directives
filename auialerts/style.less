@@ -12,14 +12,15 @@ aui-alerts {
     .error-summary {
         display: table-cell;
         vertical-align: middle;
+        margin-right: 0.5em;
         .errorCount {
             font-size: @font-size-base + 3px;
         }
-        margin-right: 5px;
     }
     .error-summary-detail {
-        padding-left: 10px;
         display: table-cell;
+        padding-left: 0.75em;
+
         > div {
             display: table-cell;
             div {
@@ -43,30 +44,18 @@ aui-alerts {
     }
     span.errorCount {
         display: inline-block;
+        cursor: default;
     }
     .caret {
         display: inline-block;
-        height: 0;
-        opacity: 1;
-        width: 0;
-        vertical-align: middle;
-        margin-left: 5px;
+        margin-left: 0.25em;
+        transform: rotate(0);
+        transition: transform @transition-duration-short;
+
         &.right {
-            border-left: 5px solid white;
-            border-bottom: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-top: 5px solid transparent;
-            margin-right: 1px;
-            margin-top: 4px;
-            margin-bottom: 6px;
+          transform: rotate(-90deg);
         }
         &.down {
-            border-left: 5px solid transparent;
-            border-bottom: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-top: 5px solid white;
-            margin-right: 3px;
-            margin-top: 2px;
         }
     }
 }
