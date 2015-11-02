@@ -27,7 +27,7 @@ export default class AuiAlertsCtrl {
         return index;
       })
       .first()
-      .value();
+      .value() || 'info';
 
     return `alert-${type}`;
   }
