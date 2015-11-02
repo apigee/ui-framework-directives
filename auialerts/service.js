@@ -3,8 +3,9 @@
 import _ from 'lodash';
 
 export default class AuiAlertsService {
-  /** @ngInject */
   constructor($timeout) {
+    'ngInject';
+
     this.$timeout = $timeout;
 
     this.alerts = [];

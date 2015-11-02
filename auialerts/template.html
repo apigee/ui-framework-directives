@@ -1,5 +1,5 @@
 <div ng-show="vm.auiAlerts.alerts.length > 1">
-    <div class="alert" ng-class="vm.severestAlertType()">
+    <div class="alert {{vm.severestAlertType()}}">
         <div class="error-summary" ng-click="vm.viewAllErrors = !vm.viewAllErrors">
             <span class="errorCount">{{vm.auiAlerts.alerts.length}}<span class="caret" ng-class="{down: vm.viewAllErrors, right: !vm.viewAllErrors}"></span></span>
         </div>
@@ -9,7 +9,7 @@
                 <div class="instructions">Open to view all {{vm.auiAlerts.alerts.length}} messages</div>
             </div>
             <div>
-                <a href="" ng-click="vm.auiAlerts.alerts = []">Dismiss All</a>
+                <a href ng-click="vm.auiAlerts.alerts = []">Dismiss All</a>
             </div>
         </div>
     </div>
