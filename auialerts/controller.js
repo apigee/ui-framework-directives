@@ -9,8 +9,8 @@ export default class AuiAlertsCtrl {
     this.auiAlerts = auiAlerts;
   }
 
-  messages() {
-    return _.pluck(this.auiAlerts.alerts, 'msg');
+  get messages() {
+    return _.pluck(this.auiAlerts.alerts, 'message');
   }
 
   severestAlertType() {

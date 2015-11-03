@@ -13,18 +13,20 @@ export default class AuiAlertsService {
   }
 
   add(alert) {
-    var existing = _.find(this.alerts, { type: alert.type, msg: alert.msg });
+    const alertObj = {
+      type: alert.type || 'info',
+      message: alert.message,
+      count: 1
+    };
+
+    var existing = _.find(this.alerts, {
+      type: alertObj.type,
+      message: alertObj.message
+    });
 
     if (existing) {
       existing.count++;
     } else {
-      var self = this;
-
-      var alertObj = {
-        type: alert.type,
-        msg: alert.msg,
-        count: 1
-      };
       alertObj.close = () => {
         this.remove(alertObj);
       };
