@@ -49,13 +49,11 @@ aui-alerts {
     .caret {
         display: inline-block;
         margin-left: 0.25em;
-        transform: rotate(0);
+        transform: rotate(-90deg);
         transition: transform @transition-duration-short;
 
-        &.right {
-          transform: rotate(-90deg);
-        }
         &.down {
+          transform: rotate(0);
         }
     }
 }

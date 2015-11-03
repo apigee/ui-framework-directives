@@ -7,13 +7,15 @@ export default class AuiAlertsCtrl {
     'ngInject';
 
     this.auiAlerts = auiAlerts;
+
+    this.isCollapsed = true;
   }
 
   get messages() {
     return _.pluck(this.auiAlerts.alerts, 'message');
   }
 
-  severestAlertType() {
+  get severestAlertType() {
     var types = ['danger', 'warning', 'info', 'success'];
 
     const type = _.chain(this.auiAlerts.alerts)
@@ -30,5 +32,9 @@ export default class AuiAlertsCtrl {
       .value() || 'info';
 
     return `alert-${type}`;
+  }
+
+  toggleCollapsed() {
+    this.isCollapsed = !this.isCollapsed;
   }
 }
