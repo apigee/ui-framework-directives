@@ -4,6 +4,12 @@ aui-spinner-overlay {
 }
 
 .aui-spinner-overlay {
+  &__container,
+  &__overlay,
+  &__content {
+    height: 100%;
+  }
+
   &__container {
     &--active {
       .aui-spinner-overlay-variant(@aui-spinner-size);
