@@ -15,7 +15,7 @@ export default class AuiAlertsService {
   add(alert) {
     const alertObj = {
       type: alert.type || 'info',
-      message: alert.message,
+      message: alert.message || alert.msg,
       count: 1
     };
 
