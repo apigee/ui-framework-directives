@@ -1,6 +1,6 @@
 {
   "name": "ui-framework-directives",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Apigee UI Framework Angular.js directives",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
