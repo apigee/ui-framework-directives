@@ -27,5 +27,5 @@
     </div>
 </div>
 <div ng-if="!vm.isCollapsed || vm.auiAlerts.alerts.length === 1">
-    <div uib-alert ng-repeat="alert in vm.auiAlerts.alerts" type="{{ alert.type || 'info' }}" close="alert.close()">{{ alert.message }} <span class="badge" ng-if="alert.count > 1">{{alert.count}}</span></div>
+    <div uib-alert ng-repeat="alert in vm.auiAlerts.alerts" ng-class="'alert-' + (alert.type || 'info')" close="alert.close()">{{ alert.message }} <span class="badge" ng-if="alert.count > 1">{{alert.count}}</span></div>
 </div>
